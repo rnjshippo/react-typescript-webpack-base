@@ -1,8 +1,7 @@
 {
-  "name": "react-webpack-base",
+  "name": "typescript-react-webpack-base",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
     "watch": "webpack --mode development --watch",
