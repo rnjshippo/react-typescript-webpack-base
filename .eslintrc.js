@@ -44,6 +44,8 @@ module.exports = {
     'no-use-before-define': ['off'], // import React할 때 에러떠서 off
     '@typescript-eslint/no-use-before-define': ['warn'],
     'import/prefer-default-export': 'off', // 한 개만 export할때는 export default를 쓰도록 하는 옵션
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     'import/resolver': {
