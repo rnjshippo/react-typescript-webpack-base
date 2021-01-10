@@ -19,7 +19,8 @@
     "jsx": "react-jsx",
     "rootDir": "./src",
     "outDir": "./dist",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "module": "ESNext"
   },
   "include": ["src"]
 }
