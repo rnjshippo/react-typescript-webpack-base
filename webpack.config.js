@@ -90,6 +90,9 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
+    runtimeChunk: {
+      name: (entrypoint) => `runtime-${entrypoint.name}`,
+    },
   },
   devServer: {
     contentBase: path.join(__dirname, './dist'),
