@@ -1,12 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    main: './src/index.tsx',
-  },
+  target: ['web', 'es5'],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -14,8 +13,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
     publicPath: '/',
   },
   module: {
@@ -57,7 +54,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: './imgs',
-            name: '[name].[ext]?[hash]',
+            name: '[name].[ext]?[contenthash]',
           },
         },
       },
@@ -66,7 +63,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           outputPath: './fonts',
-          name: '[hash].[ext]',
+          name: '[contenthash].[ext]',
           limit: 10000,
         },
       },
@@ -85,6 +82,9 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
   ],
   optimization: {
     splitChunks: {
