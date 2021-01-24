@@ -46,6 +46,7 @@ module.exports = {
     'import/prefer-default-export': 'off', // 한 개만 export할때는 export default를 쓰도록 하는 옵션
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
   },
   settings: {
     'import/resolver': {
