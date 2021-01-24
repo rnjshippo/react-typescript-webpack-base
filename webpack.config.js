@@ -6,6 +6,9 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   target: ['web', 'es5'],
+  entry: {
+    app: ['./src/index.tsx'],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -13,6 +16,8 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
     publicPath: '/',
   },
   module: {
@@ -23,7 +28,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            configFile: path.join(__dirname, 'babel.config.js'),
           },
         },
       },
@@ -34,7 +39,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
+              configFile: path.join(__dirname, 'babel.config.js'),
             },
           },
           'ts-loader',

@@ -6,15 +6,16 @@ module.exports = (api) => {
       '@babel/preset-env',
       {
         targets: '> 0.25%, not dead',
-        useBuiltIns: 'usage',
-        corejs: '3',
-        modules: false,
       },
     ],
     '@babel/preset-react',
     '@babel/preset-typescript',
   ];
-  const plugins = [];
+  const plugins = [
+    ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+    ['@babel/plugin-proposal-class-properties'],
+    ['@babel/plugin-transform-runtime', { corejs: 3 }],
+  ];
 
   return {
     plugins,
