@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   env: {
@@ -39,22 +39,22 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-constant-condition': ['error', { checkLoops: false }],
     'no-restricted-globals': 'warn',
-    'no-use-before-define': ['off'], // import React할 때 에러떠서 off
+    'no-use-before-define': ['off'],
     '@typescript-eslint/no-use-before-define': ['warn'],
-    'import/prefer-default-export': 'off', // 한 개만 export할때는 export default를 쓰도록 하는 옵션
+    'import/prefer-default-export': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
+    semi: ['off', 'never'],
   },
   settings: {
     'import/resolver': {
       typescript: {
-        project: path.join(__dirname, './tsconfig.json'), // tsconfig 옵션을 감지하도록 추가
+        project: path.join(__dirname, './tsconfig.json'),
       },
     },
     react: { version: 'detect' },
   },
   ignorePatterns: ['node_modules', 'babel.config.js', 'webpack.config.js', '.eslintrc.js'],
-};
+}
