@@ -1,11 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   devtool: 'source-map',
-  target: ['web', 'es5'],
+  target: 'web',
   entry: {
     app: ['./src/index.tsx'],
   },
@@ -114,4 +114,4 @@ module.exports = {
       '/api': 'http://localhost:3000',
     },
   },
-};
+}
