@@ -1,7 +1,8 @@
 {
   "name": "@rnjshippo/react-webpack-gen",
   "version": "0.0.1",
-  "description": "",
+  "description": "webpack boilerplate code for react-typescript",
+  "main": ".src/index.tsx",
   "scripts": {
     "dev": "webpack serve --open --mode development",
     "watch": "webpack --mode development --watch",
