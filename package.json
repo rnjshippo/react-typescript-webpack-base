@@ -1,5 +1,5 @@
 {
-  "name": "typescript-react-webpack-base",
+  "name": "@rnjshippo/react-webpack-gen",
   "version": "1.0.0",
   "description": "",
   "scripts": {
